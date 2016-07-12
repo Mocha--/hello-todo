@@ -1,16 +1,15 @@
 import React from 'react';
+import Immutable from 'immutable';
 
 export default class Header extends React.Component {
     static propTypes = {
         addTodoItem: React.propTypes.func
     }
-    
+
     constructor(props) {
         super(props);
 
-        this.state = {
-            input: ''
-        }
+        this.state = Immutable.map({input: ''})
     }
 
     handleChange(e) {
