@@ -2,8 +2,8 @@ import React from 'react';
 
 export default class TodoItem extends React.Component {
     static propTypes = {
-        text: React.propTypes.string,
-        deleteClick: React.propTypes.func
+        text: React.PropTypes.string,
+        deleteClick: React.PropTypes.func
     }
 
     constructor(props) {

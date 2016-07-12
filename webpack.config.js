@@ -1,5 +1,5 @@
 module.exports = {
-    entry: './src/app.jsx',
+    entry: './src/index.jsx',
     output: {
         path: './bundle',
         filename: 'bundle.js'
@@ -11,8 +11,12 @@ module.exports = {
             loader: 'babel-loader',
             query: {
                 presets: [
+                    // 'es2016',
                     'es2015',
                     'react'
+                ],
+                plugins: [
+                    'transform-class-properties'
                 ]
             }
         }, {
@@ -20,7 +24,7 @@ module.exports = {
             loaders: [
                 'style-loader',
                 'css-loader',
-                'postcss-loader',
+                // 'postcss-loader',
                 'stylus-loader'
             ]
         }]
