@@ -1,5 +1,4 @@
 import React from 'react';
-import Immutable from 'immutable';
 
 export default class Header extends React.Component {
     static propTypes = {
@@ -10,14 +9,14 @@ export default class Header extends React.Component {
         super(props);
         this.state = {
             input: ''
-        }
+        };
         this.handleChange = this.handleChange.bind(this);
         this.enterPress = this.handleChange.bind(this);
     }
 
     handleChange(e) {
         this.setState({'input': e.target.value});
-    };
+    }
 
     enterPress(e) {
         if (e.key === 'ENTER') {
@@ -26,11 +25,10 @@ export default class Header extends React.Component {
     }
 
     render() {
-        console.log(this.state);
         return (
             <div>
                 <form onSubmit={(e) => {
-                    e.preventDefault()
+                    e.preventDefault();
                 }}>
                     <input placeholder="What's next" onChange={this.handleChange} value={this.state.input} onKeyDown={this.enterPress}/>
                 </form>

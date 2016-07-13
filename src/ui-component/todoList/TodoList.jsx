@@ -17,7 +17,7 @@ export default class TodoList extends React.Component {
                 {this.props.list.map((ele) => {
                     return (
                         <TodoItem deleteClick={this.props.deleteItem}>{ele.text}</TodoItem>
-                    )
+                    );
                 })}
             </section>
         );

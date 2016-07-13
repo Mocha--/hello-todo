@@ -3,7 +3,9 @@ import React from 'react';
 export default class TodoItem extends React.Component {
     static propTypes = {
         text: React.PropTypes.string,
-        deleteClick: React.PropTypes.func
+        deleteClick: React.PropTypes.func,
+        id: React.PropTypes.number,
+        isFinished: React.PropTypes.bool
     }
 
     constructor(props) {
@@ -16,9 +18,12 @@ export default class TodoItem extends React.Component {
     }
 
     render() {
+        const textClass = this.props.isFinished
+            ? 'todo'
+            : 'finished';
         return (
             <div>
-                <h4>{this.props.children}</h4>
+                <h4 className={textClass}>{this.props.children}</h4>
                 <span onClick={this.deleteClick}>X</span>
             </div>
         );
